@@ -7,6 +7,7 @@
     <title>YUVA FOUNDATION</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
         @keyframes fadeInDown {
             from {
                 opacity: 0;
@@ -68,6 +69,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             color: white;
             padding: 1rem;
+
             border: none;
             cursor: pointer;
             z-index: 10;
@@ -82,12 +84,97 @@
             right: 0;
             border-radius: 5px 0 0 5px;
         }
+        .flip-card {
+            background-color: transparent;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 1.5s; /* Changed from 0.6s to 1.5s for a slower flip */
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flip-card-front {
+            background-color: #ffffff;
+            border: 1px solid #ef9906;
+        }
+
+        .flip-card-back {
+            background-color: #ffffff;
+            transform: rotateY(180deg);
+        }
+        
+        /* --- Our Impact Swipable Card Styling --- */
+        .card-container {
+            position: relative;
+            width: 100%;
+            max-width: 30rem;
+            overflow: hidden;
+            border-radius: 1rem;
+            height: 20rem; 
+            
+        }
+
+        .card {
+            background-color: white;
+            padding: 2.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-radius: 1rem;
+            transition: transform 0.4s ease-in-out;
+            will-change: transform;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .card-title {
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .card-text {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .nav-button {
+            transition: all 0.2s;
+        }
+
+        .nav-button:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
 
-    <nav class="bg-white text-black p-4 shadow-lg shadow-orange-100 fixed w-full z-10 top-1">
+    <nav class="bg-white text-black p-4 shadow-lg shadow-orange-100 fixed w-full z-10 top-0">
         <div class="container mx-auto flex justify-between items-center">
             <a href="/" class="flex items-center space-x-2">
                 <img src="Pink Black Local Charity Logo.svg" alt="Logo" class="h-12 w-33">
@@ -164,37 +251,377 @@
             </button>
         </div>
     </div>
+<!-- About Us Section -->
+<div id="about" class="max-w-7xl mx-auto p-6 md:p-10 mt-16 ">
+    <h2 class="text-3xl sm:text-4xl font-bold text-orange-500 text-center mb-8 ">About Us</h2>
+    <!-- Flex container for side-by-side layout, centered vertically -->
+    <div class="flex flex-col md:flex-row items-center md:space-x-12 space-y-8 md:space-y-0">
+        <!-- Image container -->
+        <div
+            class="w-full md:w-1/2 flex justify-center p-1 rounded-2xl shadow-lg transform transition-transform duration-300 hover:scale-105 bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500">
+            <img src="abhoutus.jpeg"
+                alt="A group of diverse people smiling and working together" class="w-full h-full object-cover rounded-xl">
+        </div>
+        <!-- Text container with flex-grow to balance space -->
+        <div class="w-full md:w-1/2 flex-grow space-y-4">
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 animate-slide-in-up transform transition-transform duration-300 hover:scale-105"
+                style="animation-delay: 0.2s;">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    YUVA FOUNDATION is a non-profit, non-political, and humanitarian organization founded with a vision
+                    to uplift the underprivileged and give them a meaningful life.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 animate-slide-in-up transform transition-transform duration-300 hover:scale-105"
+                style="animation-delay: 0.4s;">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    We strongly believe that every person matters. A child begging on the street, a widow abandoned by
+                    her family, a youth caught in addiction, or an elderly person left alone—all deserve love, respect,
+                    and a chance for a better tomorrow.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 animate-slide-in-up transform transition-transform duration-300 hover:scale-105"
+                style="animation-delay: 0.6s;">
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Through education, skill development, care homes, rehabilitation, and volunteer partnerships, we are
+                    creating a movement of compassion that is transforming lives in Telangana and beyond.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <footer class="bg-gray-800 text-white text-center p-4 mt-10">
-        <p>&copy; 2024 YUVA FOUNDATION. All rights reserved.</p>
-    </footer>
+<!-- What We Do Section -->
+<div class="max-w-7xl mx-auto p-6 md:p-10 mt-12 bg-white rounded-2xl shadow-2xl">
+    <h2 class="text-3xl sm:text-3xl font-bold text-orange-500 text-center mb-8">What We Do</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Child Education & Care Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front ">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.835 5.47 9.167 5 7.5 5c-2.485 0-4.5 2.015-4.5 4.5S5.015 14 7.5 14c.895 0 1.745-.25 2.5-.689m2.5-.311c1.558 0 3.003-.51 4.312-1.39M12 6.253c1.558 0 3.003.51 4.312 1.39M12 6.253V5.5c0-1.657 1.343-3 3-3s3 1.343 3 3v.753m-6 11.247v-4.5M12 14c1.558 0 3.003-.51 4.312-1.39M12 14.5c1.558 0 3.003-.51 4.312-1.39M12 19.5c-1.558 0-3.003-.51-4.312-1.39" />
+                        </svg>
+                        Child Education & Care
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We provide free education, school materials, and
+                        holistic development programs.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="Child Education" alt="Child with book"
+                        class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Volunteer & Partnership Programs Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front ">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12c1.334 0 2.597.545 3.535 1.517M21 20H17m-1 0v-2m-8-8a4 4 0 100 8 4 4 0 000-8z" />
+                     
+                            </svg>
+                        Volunteer & Partnership Programs
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We welcome local and foreign volunteers and partner
+                        with corporates, institutions, and individuals.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="vp.png" alt="Partnership image"
+                        class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Women Empowerment Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12c1.334 0 2.597.545 3.535 1.517M21 20H17m-1 0v-2m-8-8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        Women Empowerment
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We provide skill training in tailoring,
+                        handicrafts, and computer skills so women can earn a living.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="women enp.jpeg" alt="Woman smiling"
+                        class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Orphanages & Old Age Homes Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1h3a1 1 0 001-1v-4a1 1 0 01-1-1h-2a1 1 0 00-1-1h-2a1 1 0 00-1 1v4a1 1 0 001 1z" />
+                        </svg>
+                        Orphanages & Old Age Homes
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">Our homes provide shelter, food, education,
+                        healthcare, and above all—family.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="oldagehomes.jpeg" alt="People hugging"
+                        class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Youth Development & Counseling Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 3v2m6-2v2M8 11V9c-1.396.903-2 1.5-2 2s.604 1.097 2 2m8-2v2c1.396.903 2 1.5 2 2s-.604 1.097-2 2m-8-2h4m-4 0a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        Youth Development & Counseling
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We run training programs, career guidance, and
+                        leadership workshops to help youth.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="https://placehold.co/300x200/FFB347/FFFFFF?text=Youth" alt="Group of diverse youth"
+                        class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Rehabilitation Centres Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c1.657 0 3 1.343 3 3v5a3 3 0 01-3 3c-1.657 0-3-1.343-3-3v-5a3 3 0 013-3z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8V4c-3.15 0-5.717 2.55-5.717 5.7S8.85 21 12 21s5.717-2.55 5.717-5.7S15.15 4 12 4z" />
+                        </svg>
+                        Rehabilitation Centres
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We help individuals break free from addictions and
+                        destructive lifestyles.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="https://placehold.co/300x200/FFB347/FFFFFF?text=Rehabilitation"
+                        alt="Person receiving support" class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Reaching the Unreached Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 2.25V5.5M12 18.5V21.75M12 5.5c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                        Reaching the Unreached
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">We serve remote villages lacking education,
+                        healthcare, and livelihood support.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="https://placehold.co/300x200/FFB347/FFFFFF?text=Support"
+                        alt="Community members in a village" class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <!-- Community Outreach Card -->
+        <div class="flip-card h-64">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-2 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12c1.334 0 2.597.545 3.535 1.517M21 20H17m-1 0v-2m-8-8a4 4 0 100 8 4 4 0 000-8z" />
+                        </svg>
+                        Community Outreach
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-sm">Organizing local events and campaigns to raise
+                        awareness and support for our various causes.</p>
+                </div>
+                <div class="flip-card-back flex justify-center items-center">
+                    <img src="https://placehold.co/300x200/FFB347/FFFFFF?text=Outreach"
+                        alt="Community members at an event" class="rounded-xl w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Our Impact Section (Swipable card system) -->
+<div id="impact" class="max-w-7xl mx-auto p-6 md:p-10 mt-12  bg-white rounded-2xl shadow-2xl text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-orange-500 mb-8">Our Impact</h2>
+
+    <div class="flex items-center justify-center w-full max-w-2xl px-4 mx-auto relative">
+        <!-- Previous Button -->
+        <button id="prevImpactBtn"
+            class="nav-button p-4 rounded-full bg-white shadow-lg text-gray-500 hover:text-gray-700 focus:outline-none transition-all duration-300 transform -translate-x-1/2 disabled:opacity-30 disabled:cursor-not-allowed absolute left-0"
+            aria-label="Previous story">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <!-- Card Container -->
+        <div id="cardContainer" class="card-container relative transition-transform duration-300">
+            <!-- Cards will be dynamically added here -->
+        </div>
+
+        <!-- Next Button -->
+        <button id="nextImpactBtn"
+            class="nav-button p-4 rounded-full bg-white shadow-lg text-gray-500 hover:text-gray-700 focus:outline-none transition-all duration-300 transform translate-x-1/2 absolute right-0"
+            aria-label="Next story">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <h5 class="text-center font-bold text-3xl text-orange-500  ">
+        Every story is written because someone cared. You can be that someone today.
+    </h5>
+</div>
+
+<!-- How You Can Help Section -->
+<div class="max-w-7xl mx-auto p-6 md:p-10 mt-12">
+    <h2 class="text-3xl sm:text-4xl font-bold text-orange-500 text-center mb-8">How You Can Help</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+        <!-- Donate Card -->
+        <div
+            class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 transform transition-transform duration-300 hover:scale-105 ">
+            <img src="https://placehold.co/600x400/FDBA74/FFFFFF?text=Donate" alt="A hand receiving a donation"
+                class="w-full rounded-md mb-4 object-cover h-40">
+            <h3 class="text-2xl font-bold text-orange-600 mb-2">Donate</h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Your generosity provides food, education, shelter, and hope to those in need. Every contribution, big or
+                small, makes a significant difference.
+            </p>
+        </div>
+
+        <!-- Volunteer Card -->
+        <div
+            class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 transform transition-transform duration-300 hover:scale-105">
+            <img src="https://placehold.co/600x400/FDBA74/FFFFFF?text=Volunteer"
+                alt="A group of volunteers working together" class="w-full rounded-md mb-4 object-cover h-40">
+            <h3 class="text-2xl font-bold text-orange-600 mb-2">Volunteer</h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Share your time, skills, and love with those who need it most. Our programs thrive on the passion of our
+                dedicated volunteers.
+            </p>
+        </div>
+
+        <!-- Partner With Us Card -->
+        <div
+            class="bg-white p-6 rounded-xl shadow-lg border-b-4 border-orange-500 transform transition-transform duration-300 hover:scale-105 ">
+            <img src="https://placehold.co/600x400/FDBA74/FFFFFF?text=Partner" alt="Partners shaking hands"
+                class="w-full rounded-md mb-4 object-cover h-40">
+            <h3 class="text-2xl font-bold text-orange-600 mb-2">Partner With Us</h3>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Organizations and businesses can join hands with us to create a bigger, more sustainable impact on our
+                community.
+            </p>
+        </div>
+    </div>
+    <div class="flex justify-center mt-12">
+        <a href="#"
+            class="px-8 py-4 rounded-full font-bold text-white shadow-lg transform transition-transform duration-300 hover:scale-105 animate-bounce bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-500">
+            Donate Now
+        </a>
+    </div>
+</div>
+
+
+<!-- Contact Us Section -->
+<div id="contact" class="max-w-7xl mx-auto p-6 md:p-10 mt-12 bg-white rounded-2xl shadow-2xl text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-orange-500 mb-8">Contact Us</h2>
+
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-4">
+        <!-- Logo -->
+        <div class="flex justify-center md:w-auto">
+            <img src="Pink Black Local Charity Logo.svg" alt="Logo" class="h-32 w-48">
+        </div>
+
+        <!-- Contact Info -->
+        <div class="text-gray-700 text-lg md:w-auto md:ml-1 text-left">
+            <p>📍 2-122/1, BC Colony, Nashkal Village, Chilpur Mandal,</p>
+            <p>Jangaon District, Telangana – 506144</p>
+            <p>📧 Email:
+                <a href="mailto:info@yuvafoundation.org" class="text-blue-500 hover:underline">
+                    info@yuvafoundation.org
+                </a>
+            </p>
+            <p>📞 Phone:
+                <a href="tel:+911234567890" class="text-blue-500 hover:underline">
+                    +91 12345 67890
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white text-center p-6 mt-16 rounded-t-3xl">
+    <p class="text-sm">&copy; 2024 YUVA FOUNDATION. All rights reserved.</p>
+</footer>
+
 
     <script>
-        // Navbar functionality
+        // --- Navbar functionality ---
         const menuButton = document.getElementById('menu-button');
         const navLinks = document.getElementById('nav-links');
 
         menuButton.addEventListener('click', () => {
             navLinks.classList.toggle('hidden');
-            navLinks.classList.toggle('flex');
-            navLinks.classList.toggle('flex-col');
-            navLinks.classList.add('absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4');
+            if (!navLinks.classList.contains('hidden')) {
+                // Add mobile styles on show
+                navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4', 'lg:relative', 'lg:flex-row', 'lg:space-y-0');
+            } else {
+                // Clean up mobile styles on hide
+                navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4');
+            }
         });
 
-        // Carousel functionality
+        // --- Main Carousel functionality ---
         const carouselImages = document.getElementById('carousel-images');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
 
         let currentIndex = 0;
-        let totalImages = carouselImages.children.length;
+        const totalImages = carouselImages.children.length;
 
         function updateCarousel() {
             const imageWidth = carouselImages.children[0].clientWidth;
             carouselImages.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
         }
 
-        // Add event listeners for the navigation buttons
         nextBtn.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % totalImages;
             updateCarousel();
@@ -205,12 +632,133 @@
             updateCarousel();
         });
 
-        // Autoplay
         setInterval(() => {
             currentIndex = (currentIndex + 1) % totalImages;
             updateCarousel();
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
+
+        // --- Our Impact Swipable Cards functionality ---
+        const stories = [
+            {
+                title: "Raju's New Beginning",
+                text: "Raju, a young boy from a remote village, had never been to school. After joining our Child Education Program, he's now excelling in his studies and dreams of becoming a doctor. We're proud to be a part of his journey."
+            },
+            {
+                title: "Shanti's New Skills",
+                text: "Shanti, a widow with no source of income, found hope at our women's empowerment center. She learned tailoring and handicrafts, and is now running her own small business, providing for her family with dignity."
+            },
+            {
+                title: "An Old Man's Second Home",
+                text: "Mr. Sharma, abandoned by his family, found shelter and care at our old age home. He now spends his days sharing stories and finding joy in the company of others. He says he has found a new family here."
+            }
+        ];
+
+        const cardContainer = document.getElementById('cardContainer');
+        const prevImpactBtn = document.getElementById('prevImpactBtn');
+        const nextImpactBtn = document.getElementById('nextImpactBtn');
+        let currentStoryIndex = 0;
+        let isDragging = false;
+        let startX = 0;
+        let deltaX = 0;
+        let cardWidth = 0;
+
+        function renderCard() {
+            const story = stories[currentStoryIndex];
+            cardContainer.innerHTML = `
+                    <div class="card p-6 md:p-10">
+                        <h3 class="card-title text-3xl mb-4 text-orange-500">${story.title}</h3>
+                        <p class="card-text text-gray-700">${story.text}</p>
+                    </div>
+                `;
+            // Update button states
+            prevImpactBtn.disabled = currentStoryIndex === 0;
+            nextImpactBtn.disabled = currentStoryIndex === stories.length - 1;
+        }
+
+        function handleNextStory() {
+            if (currentStoryIndex < stories.length - 1) {
+                currentStoryIndex++;
+                renderCard();
+            }
+        }
+
+        function handlePrevStory() {
+            if (currentStoryIndex > 0) {
+                currentStoryIndex--;
+                renderCard();
+            }
+        }
+
+        // Mouse and Touch Event Listeners for swiping
+        cardContainer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            cardWidth = cardContainer.offsetWidth;
+            cardContainer.style.transition = 'none';
+        });
+
+        cardContainer.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            deltaX = e.clientX - startX;
+            cardContainer.style.transform = `translateX(${deltaX}px)`;
+        });
+
+        cardContainer.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            cardContainer.style.transition = 'transform 0.4s ease-in-out';
+            if (Math.abs(deltaX) > cardWidth / 4) {
+                if (deltaX < 0) {
+                    handleNextStory();
+                } else {
+                    handlePrevStory();
+                }
+            }
+            cardContainer.style.transform = 'translateX(0)';
+            deltaX = 0;
+        });
+
+        // Touch events
+        cardContainer.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            startX = e.touches[0].clientX;
+            cardWidth = cardContainer.offsetWidth;
+            cardContainer.style.transition = 'none';
+        }, { passive: false });
+
+        cardContainer.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            deltaX = e.touches[0].clientX - startX;
+            cardContainer.style.transform = `translateX(${deltaX}px)`;
+        }, { passive: false });
+
+        cardContainer.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            cardContainer.style.transition = 'transform 0.4s ease-in-out';
+            if (Math.abs(deltaX) > cardWidth / 4) {
+                if (deltaX < 0) {
+                    handleNextStory();
+                } else {
+                    handlePrevStory();
+                }
+            }
+            cardContainer.style.transform = 'translateX(0)';
+            deltaX = 0;
+        });
+
+        // Button click handlers
+        nextImpactBtn.addEventListener('click', handleNextStory);
+        prevImpactBtn.addEventListener('click', handlePrevStory);
+
+        // Initial render
+        window.onload = function () {
+            renderCard();
+        };
+
     </script>
+
+
 </body>
 
 </html>

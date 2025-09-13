@@ -448,13 +448,15 @@
 
 
         menuButton.addEventListener('click', () => {
-            navLinks.classList.toggle('hidden');
-            if (!navLinks.classList.contains('hidden')) {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
                 // Add mobile styles on show
                 navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4', 'lg:relative', 'lg:flex-row', 'lg:space-y-0');
+                navLinks.classList.remove('hidden');
             } else {
                 // Clean up mobile styles on hide
                 navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4');
+                navLinks.classList.add('hidden');
             }
         });
 

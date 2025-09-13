@@ -157,5 +157,30 @@
     <footer class="bg-gray-100 text-gray-600 text-center p-6 mt-16 rounded-t-3xl">
         <p>&copy; 2024 YUVA FOUNDATION. All rights reserved.</p>
     </footer>
+
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const navLinks = document.getElementById('nav-links');
+        const navBar = document.querySelector('nav');
+        const body = document.body;
+
+        function setBodyPadding() {
+            const navHeight = navBar.offsetHeight;
+            body.style.paddingTop = navHeight + 'px';
+            document.documentElement.style.setProperty('--nav-height', navHeight + 'px');
+        }
+
+        window.addEventListener('load', setBodyPadding);
+        window.addEventListener('resize', setBodyPadding);
+
+        menuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            if (!navLinks.classList.contains('hidden')) {
+                navLinks.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4', 'lg:relative', 'lg:flex-row', 'lg:space-y-0');
+            } else {
+                navLinks.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'w-full', 'bg-white', 'rounded-b-md', 'shadow-lg', 'p-4', 'items-center', 'space-y-4');
+            }
+        });
+    </script>
 </body>
 </html>

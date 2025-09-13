@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAVA Foundation - How to Help</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .nav-link {
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+        .nav-link:hover {
+            transform: scale(1.05);
+        }
+        .nav-link.active-link {
+            font-weight: bold;
+            color: #f97316;
+        }
+        .card {
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .icon-hover {
+            transition: transform 0.2s ease;
+        }
+        .icon-hover:hover {
+            transform: scale(1.1);
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-black">
+ <nav class="bg-white text-black p-4 shadow-lg shadow-orange-100 fixed w-full z-20 top-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="css/logo-removebg-preview.png" alt="YUVA FOUNDATION logo"
+                    class="h-12 w-33">
+                <span class="font-bold text-xl tracking-wider hidden md:block">YUVA FOUNDATION</span>
+            </a>
+
+            <button id="menu-button"
+                class="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="hidden lg:flex lg:space-x-8">
+                <a href="index.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Home</a>
+                <a href="abhoutus.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">About Us</a>
+                <a href="what-we-do.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">What We Do</a>
+                <a href="impact.html"  class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Our Impact</a>
+                <a href="help.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">How to Help</a>
+                <a href="contact.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Contact</a>
+                
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-12">
+        <!-- How to Help Section -->
+        <section id="how-to-help" class="container mx-auto px-4 py-16 fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-4 text-orange-500">How You Can Help</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+                Your support makes our work possible. There are many ways to get involved and make a lasting difference in someone's life.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-orange-500 flex flex-col items-center text-center">
+                    <div class="text-6xl text-orange-500 mb-4 icon-hover"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">Donate</h3>
+                    <p class="text-gray-600 mb-4">Your generosity provides food, education, shelter, and hope. Every rupee you give is a seed of hope in someone’s life.</p>
+                    <button class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">Donate Now</button>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-orange-500 flex flex-col items-center text-center">
+                    <div class="text-6xl text-orange-500 mb-4 icon-hover"><i class="fa-solid fa-handshake"></i></div>
+                    <h3 class="text-2xl font-bold mb-2">Volunteer</h3>
+                    <p class="text-gray-600 mb-4">Share your time, skills, and love with those who need it most. We welcome local and foreign volunteers to join our cause.</p>
+                    <button class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">Volunteer Today</button>
+                </div>
+                <div class="card p-8 rounded-xl shadow-lg border-2 border-transparent hover:border-orange-500 flex flex-col items-center text-center">
+                    <div class="text-6xl text-orange-500 mb-4 icon-hover">
+                        <i class="fa-solid fa-people-carry-box"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">Partner With Us</h3>
+                    <p class="text-gray-600 mb-4">Organizations and businesses can join hands with us to create a lasting social impact through collaboration and support.</p>
+                    <button class="bg-orange-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-colors duration-300">Start a Partnership</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- New section for extra info -->
+        <section class="container mx-auto px-4 py-16">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-3xl md:text-4xl font-extrabold mb-4">Every Act of Kindness Creates a Ripple Effect</h3>
+                <p class="text-lg text-gray-600 mb-4">
+                    At YAVA Foundation, we believe that every small action contributes to a larger wave of change. Your donation isn't just a monetary contribution; it's a direct investment in a child's education, a widow's livelihood, or an elderly person's dignity.
+                </p>
+                <p class="text-lg text-gray-600">
+                    By choosing to volunteer or partner with us, you are not only helping us grow but also inspiring others to join the movement. Together, we can build a society where compassion is the norm, and no one is left behind.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-600 text-center p-6 mt-16 rounded-t-3xl">
+        <p>&copy; 2024 YUVA FOUNDATION. All rights reserved.</p>
+    </footer>
+</body>
+</html>

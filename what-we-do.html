@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAVA Foundation - What We Do</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link.active-link {
+            font-weight: bold;
+            color: #f97316; /* orange-500 */
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+        .fade-in-up-1 { animation-delay: 0.2s; }
+        .fade-in-up-2 { animation-delay: 0.3s; }
+        .fade-in-up-3 { animation-delay: 0.4s; }
+        .fade-in-up-4 { animation-delay: 0.5s; }
+        .fade-in-up-5 { animation-delay: 0.6s; }
+        .fade-in-up-6 { animation-delay: 0.7s; }
+        .fade-in-up-7 { animation-delay: 0.8s; }
+        .fade-in-up-8 { animation-delay: 0.9s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-black">
+ <nav class="bg-white text-black p-4 shadow-lg shadow-orange-100 fixed w-full z-20 top-0">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-2">
+                <img src="css/logo-removebg-preview.png" alt="YUVA FOUNDATION logo"
+                    class="h-12 w-33">
+                <span class="font-bold text-xl tracking-wider hidden md:block">YUVA FOUNDATION</span>
+            </a>
+
+            <button id="menu-button"
+                class="lg:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <div id="nav-links" class="hidden lg:flex lg:space-x-8">
+                <a href="index.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Home</a>
+                <a href="abhoutus.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">About Us</a>
+                <a href="what-we-do.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">What We Do</a>
+                <a href="impact.html"  class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Our Impact</a>
+                <a href="help.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">How to Help</a>
+                <a href="contact.html" class="nav-item p-2 block text-lg font-medium hover:text-orange-400 rounded-md">Contact</a>
+                
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-12">
+        <!-- What We Do Section -->
+        <section id="what-we-do" class="container mx-auto px-4 py-16">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-center text-orange-500 mb-4 fade-in-up">Our Mission: Transforming Society</h2>
+            <p class="text-center text-lg text-gray-600 mb-12 max-w-2xl mx-auto fade-in-up fade-in-up-1">
+                Our mission is to empower communities and individuals through targeted programs that address their specific needs.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-2">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-child"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Child Education & Care</h3>
+                    <p class="text-gray-600">We provide free education, school materials, and holistic development programs to help underprivileged children dream beyond poverty. We believe in providing not just a classroom but a future.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-3">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-female"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Women Empowerment</h3>
+                    <p class="text-gray-600">We provide skill training in tailoring, handicrafts, small businesses, and computer skills so women can earn a living and raise their families, breaking the cycle of gender inequality and poverty.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-4">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-home"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Orphanages & Old Age Homes</h3>
+                    <p class="text-gray-600">Our homes provide shelter, food, education, healthcare, and above all—the warmth of family. We create a safe and loving environment for abandoned children and elderly people who have been left behind.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-5">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-users-gear"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Youth Development & Counseling</h3>
+                    <p class="text-gray-600">We run training programs, career guidance, counseling, and leadership workshops to help youth build strong futures, develop leadership skills, and stay away from destructive lifestyles.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-6">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-hands-helping"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Rehabilitation Centres</h3>
+                    <p class="text-gray-600">We help individuals break free from addictions and destructive lifestyles, offering comprehensive counseling and skill training to help them reintegrate into society with dignity.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-7">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-globe-americas"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Reaching the Unreached</h3>
+                    <p class="text-gray-600">We serve remote villages lacking education, healthcare, and livelihood support, bringing hope to the most isolated communities and ensuring no one is left behind in our mission.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-8 transition-all duration-300 hover:text-orange-500 fade-in-up fade-in-up-8">
+                    <div class="text-5xl mb-4 transition-all duration-300"><i class="fas fa-handshake"></i></div>
+                    <h3 class="text-2xl font-bold mb-2 transition-all duration-300">Volunteer & Partnership Programs</h3>
+                    <p class="text-gray-600">We welcome local and foreign volunteers and partner with corporates, institutions, and individuals to amplify our impact and create a global movement of compassion.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-600 text-center p-6 mt-16 rounded-t-3xl">
+        <p>&copy; 2024 YUVA FOUNDATION. All rights reserved.</p>
+    </footer>
+</body>
+</html>
